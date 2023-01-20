@@ -1,0 +1,1 @@
+export const mainBackground = '#F3EAC0';
