@@ -28,10 +28,10 @@ const Navbar = () => {
     return (
         <NavbarBody>
             <NavbarInner>
-                <Link href={'/'}>LinkA</Link>
-                <Link href={'/test-page'}>LinkB</Link>
-                <Link href={'/test-page'}>LinkC</Link>
-                <Link href={'/test-page'}>Blog</Link>
+                <Link href={'/'}>Beback</Link>
+                <Link href={'/blog'}>Blog</Link>
+                <Link href={'/blog'}>Blog</Link>
+                <Link href={'/blog'}>Blog</Link>
             </NavbarInner>
         </NavbarBody>
     );
