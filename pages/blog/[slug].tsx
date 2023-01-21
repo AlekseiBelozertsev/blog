@@ -1,4 +1,6 @@
+import { getSinglePost } from '@/lib/notion';
 import React from 'react';
+import { databaseId } from '.';
 
 const BlogPost = () => {
     return (
@@ -9,3 +11,15 @@ const BlogPost = () => {
 };
 
 export default BlogPost;
+
+const getStaticProps = async ({params} : {params: any}) => {
+    const post = await getSinglePost(params.slug, databaseId);
+    console.log(params)
+    return {
+        props: {
+            post,
+        },
+        revalidate: 60
+    }
+}
+

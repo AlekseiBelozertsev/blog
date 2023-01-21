@@ -31,8 +31,6 @@ type Posts = {
   img?: string,
 }[];
 
-//To figure out, why page is undefined. AND HOW TO GET THE PAGE CONTENT FOR GOTT SAKE!1
-
 const Blog = ({posts} : {posts: Posts}, {page}: {page: any}) => {
     console.log(page)
     return (
@@ -42,9 +40,9 @@ const Blog = ({posts} : {posts: Posts}, {page}: {page: any}) => {
                     posts.map((post: any) => {
                         return (
                         <li key={post.properties.id.formula.string}>
-                        <Link href={`blog/${post.properties.Slug.formula.string}`} >
-                            {post.properties.Name.title[0].plain_text}
-                        </Link>
+                          <Link href={`blog/${post.properties.Slug.formula.string}`} >
+                              {post.properties.Name.title[0].plain_text}
+                          </Link>
                         </li>
                     )
                     })
@@ -58,12 +56,9 @@ export default Blog;
 
 export const getStaticProps = async () => {
     const database = await getDatabase(databaseId);
-    const page = await getPage('3c819e20-f11f-48a5-8f0a-c3ce743797f5');
     return {
       props: {
         posts: database,
-        //WHY NOT WORKING
-        page: page,
       },
           // Next.js will attempt to re-generate the page:
       // - When a request comes in
