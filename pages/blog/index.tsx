@@ -1,50 +1,42 @@
 import React from 'react';
-import { getDatabase, getPage } from '@/lib/notion';
 import Link from 'next/link';
+import { getAllPublished } from '@/lib/notion';
 
 export const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID ?? ''
 
 type Posts = {
-  properties: {
-    Name: {
-      title: [{
-        plain_text: string,
-      }],
-    },
-    id: {
-      formula: {
-        string: string,
-      },
-    },
-    Published: {
-      checkbox: boolean,
-    },
-    Slug: {
-      formula: {
-        string: string,
-      }
-    }
-  },
-  createdAt: boolean,
-  tag?: string,
-  slug: string,
-  img?: string,
-}[];
+  id: any;
+  title: any;
+  // tags: any;
+  description: any;
+  createdAt: string;
+  slug: any;
+}[]
 
-const Blog = ({posts} : {posts: Posts}, {page}: {page: any}) => {
-    console.log(page)
+type Post = {
+  id: string;
+  title: any;
+  // tags: any;
+  description: any;
+  createdAt: string;
+  slug: any;
+}
+
+
+const Blog = ({posts}: {posts: Posts}) => {
     return (
         <div>
             <ul>
                 {
-                    posts.map((post: any) => {
+                    posts.map((post: Post) => {
                         return (
-                        <li key={post.properties.id.formula.string}>
-                          <Link href={`blog/${post.properties.Slug.formula.string}`} >
-                              {post.properties.Name.title[0].plain_text}
+                        <li key={post.id}>
+                          <Link href={`blog/${post.slug}`} >
+                              {post.title}
+                              {`   ` + post.createdAt}
                           </Link>
                         </li>
-                    )
+                      )
                     })
                 }
             </ul>
@@ -55,7 +47,7 @@ const Blog = ({posts} : {posts: Posts}, {page}: {page: any}) => {
 export default Blog;
 
 export const getStaticProps = async () => {
-    const database = await getDatabase(databaseId);
+    const database = await getAllPublished();
     return {
       props: {
         posts: database,
