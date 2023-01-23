@@ -48,7 +48,7 @@ export const getAllPublished = async () => {
     });
   
     const allPosts: any = posts.results;
-    console.log(allPosts[0].properties)
+    // console.log(allPosts[0].properties)
     return allPosts.map((post: any) => {
       return getPageMetaData(post);
     });
@@ -56,7 +56,7 @@ export const getAllPublished = async () => {
   
 
 // Fetches single post
-export const getSinglePost = async (Slug: string, databaseId: string) => {
+export const getSinglePost = async (Slug: string) => {
     const response = await notion.databases.query({
         database_id: databaseId,
         filter: {
@@ -70,10 +70,12 @@ export const getSinglePost = async (Slug: string, databaseId: string) => {
     });
 
     const page = response.results[0];
+    const metadata = getPageMetaData(page);
     const mdblocks = await n2m.pageToMarkdown(page.id);
     const mdToString = n2m.toMarkdownString(mdblocks);
 
     return {
+        metadata,
         markdown: mdToString,
     }
 };

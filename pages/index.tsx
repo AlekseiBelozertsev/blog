@@ -2,11 +2,7 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import styled from 'styled-components';
 
-
 const inter = Inter({ subsets: ['latin'] })
-
-
-// export const postTitle = posts[0] 
 
 export default function Home() {
   return (
@@ -18,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeWrapper>
-        <h1>😠 What's all about?</h1>
+        <h1>Humans are Fucking bollocks</h1>
       </HomeWrapper>
     </>
   )
