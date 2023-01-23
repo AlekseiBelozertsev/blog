@@ -8,7 +8,7 @@ const notion = new Client({
 
 const n2m = new NotionToMarkdown({notionClient: notion});
 
-// page metadata gets the data needed for the post to show
+// Page metadata gets the data needed for the post to show
 export const getPageMetaData = (post: any) => {
     // const getTags = (tags: any) => {
     //   const allTags = tags.map((tag: any) => {
