@@ -28,9 +28,7 @@ const Navbar = () => {
     return (
         <NavbarBody>
             <NavbarInner>
-                <Link href={'/'}>Beback</Link>
-                <Link href={'/blog'}>Blog</Link>
-                <Link href={'/blog'}>Blog</Link>
+                <Link href={'/'}>😠</Link>
                 <Link href={'/blog'}>Blog</Link>
             </NavbarInner>
         </NavbarBody>
