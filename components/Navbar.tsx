@@ -30,8 +30,6 @@ const Navbar = () => {
             <NavbarInner>
                 <Link href={'/'}>😠</Link>
                 <Link href={'/blog'}>Blog</Link>
-                <Link href={'/blog'}>Blog</Link>
-                <Link href={'/blog'}>Blog</Link>
             </NavbarInner>
         </NavbarBody>
     );

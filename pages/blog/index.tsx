@@ -34,6 +34,7 @@ const Blog = ({posts}: {posts: Posts}) => {
                           <Link href={`blog/${post.slug}`} >
                               {post.title}
                               {`   ` + post.createdAt}
+                              {post.description}
                           </Link>
                         </li>
                       )

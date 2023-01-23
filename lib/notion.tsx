@@ -48,7 +48,7 @@ export const getAllPublished = async () => {
     });
   
     const allPosts: any = posts.results;
-    // console.log(allPosts[0].properties)
+
     return allPosts.map((post: any) => {
       return getPageMetaData(post);
     });
@@ -80,9 +80,7 @@ export const getSinglePost = async (Slug: string) => {
     }
 };
 
-
-
-//makes date easier to read
+//Makes date easier to read
 const getToday = (datestring: string) => {
     const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
