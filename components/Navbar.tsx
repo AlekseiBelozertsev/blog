@@ -5,13 +5,19 @@ import styled from 'styled-components';
 const NavbarBody = styled.header`
     position: fixed;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(12px);
     background: transparent;
+    z-index: 2;
+
+    .logo {
+        font-size: 40px;
+    }
 `;
 
 const NavbarInner = styled.div`
@@ -22,10 +28,14 @@ const NavbarInner = styled.div`
    align-items: center;
    width: fit-content;
    gap: 24px;
-
    font-family: 'Inter';
-   font-size: 20px;
+   font-size: 18px;
    color: #111827;
+   @media(max-width: 768px) {
+        gap: 8px;
+        padding: 8px;
+        font-size: 16px;
+    }
 `;
 
 const LinkContainer = styled(Link)`
@@ -40,15 +50,16 @@ const LinkContainer = styled(Link)`
     :focus {
         background-color: #ECECE9
     }
+    @media(max-width: 768px) {
+        padding: 8px;
+    }
 `;
 
 const Navbar = () => {
     return (
         <NavbarBody>
             <NavbarInner>  
-                <LinkContainer href={'/'}>
-                    <span>🐱‍👤 Alexei Belozertcev</span>
-                </LinkContainer>
+                <span className='logo'>🐱‍👤</span>
             </NavbarInner>
             <NavbarInner>
                 <LinkContainer href={'/'}>

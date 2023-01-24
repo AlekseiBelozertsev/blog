@@ -38,17 +38,17 @@ export const getStaticPaths = async () => {
   };
 
   const BlogPage = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  margin: 0 auto;
-  img {
+    display: flex;
+    flex-direction: column;
     max-width: 800px;
-    aspect-ratio: 16 / 9;
-  }
-  img:first-child {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-  }
+    margin: 0 auto;
+    img {
+        max-width: 800px;
+        aspect-ratio: 16 / 9;
+    }
+    img:first-child {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
   `;
 
