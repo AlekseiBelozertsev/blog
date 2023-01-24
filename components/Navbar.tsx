@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
+import { LinkContainer } from './Button';
 
 const NavbarBody = styled.header`
     position: fixed;
@@ -38,23 +38,6 @@ const NavbarInner = styled.div`
     }
 `;
 
-const LinkContainer = styled(Link)`
-    background-color: transparent;
-    padding: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all .3s;
-    :hover {
-        background-color: #ECECE9
-    }
-    :focus {
-        background-color: #ECECE9
-    }
-    @media(max-width: 768px) {
-        padding: 8px;
-    }
-`;
-
 const Navbar = () => {
     return (
         <NavbarBody>
@@ -62,13 +45,13 @@ const Navbar = () => {
                 <span className='logo'>🐱‍👤</span>
             </NavbarInner>
             <NavbarInner>
-                <LinkContainer href={'/'}>
+                <LinkContainer bgColor='#ECECE9' href={'/'}>
                     <span>Projects</span>
                 </LinkContainer>
-                <LinkContainer href={'/'}>
+                <LinkContainer bgColor='#ECECE9' href={'/'}>
                     <span>Contact</span>
                 </LinkContainer>
-                <LinkContainer href={'/blog'}>
+                <LinkContainer bgColor='#ECECE9' href={'/blog'}>
                     <span>Blog</span>
                 </LinkContainer>
             </NavbarInner>

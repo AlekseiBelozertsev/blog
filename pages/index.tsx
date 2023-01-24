@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import styled from 'styled-components';
+import LinkButton from '@/components/Button';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,10 +15,23 @@ export default function Home() {
       </Head>
       <HomeWrapper>
        <HomeSection>
-          <span className='home-section_profession'>Not a cocksucker!</span>
-          <h1>Hello fuckers, my name is John Tucker</h1>
-          <p>Short text with details about you, what you do or your professional career. You can add more information on the about page.</p>
+          <span className='home-section_profession'>About me:</span>
+          <h1>Hi! My name is Alexei, let me introduce myself.</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus praesentium doloremque adipisci odit corporis ratione voluptatum cupiditate ducimus veniam maxime. Maiores unde impedit, dolorum praesentium laborum similique tempora quasi dolor.</p>
+          <Buttons>
+        <LinkButton
+          link='/'
+          bgColor='#E81224' 
+          border='2px solid #111827'
+          content='LinkedIn' />
+        <LinkButton
+          link='/'
+          bgColor='#E81224' 
+          border='2px solid #111827'
+          content='Projects' />
+       </Buttons>
        </HomeSection>
+       
       </HomeWrapper>
     </>
   )
@@ -26,8 +40,9 @@ export default function Home() {
 const HomeWrapper = styled.div`
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   width: 100%;
+  margin: 0 20px;
 `;
 
 const HomeSection = styled.div`
@@ -35,18 +50,15 @@ const HomeSection = styled.div`
   flex-direction: column;
   gap: 16px;
 
-  span {
+  .home-section_profession {
+    z-index: 1;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 27px;
     text-transform: uppercase;
-    color: #FDC435;
-  }
-
-  .home-section_profession {
-    z-index: 1;
+    color:  #E81224;
   }
 
   p {
@@ -71,3 +83,10 @@ const HomeSection = styled.div`
 
   }
 `;
+
+export const Buttons = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+`;
+
