@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { LinkContainer } from './Button';
+import { colors } from '@/src/colors';
 
 const NavbarBody = styled.header`
     position: fixed;
@@ -45,13 +46,13 @@ const Navbar = () => {
                 <span className='logo'>🐱‍👤</span>
             </NavbarInner>
             <NavbarInner>
-                <LinkContainer bgcolor='#ECECE9' href={'/'}>
+                <LinkContainer bgcolor={colors.mainBackground} href={'/'}>
                     <span>Projects</span>
                 </LinkContainer>
-                <LinkContainer bgcolor='#ECECE9' href={'/'}>
+                <LinkContainer bgcolor={colors.mainBackground} href={'/contact'}>
                     <span>Contact</span>
                 </LinkContainer>
-                <LinkContainer bgcolor='#ECECE9' href={'/blog'}>
+                <LinkContainer bgcolor={colors.mainBackground} href={'/blog'}>
                     <span>Blog</span>
                 </LinkContainer>
             </NavbarInner>

@@ -20,7 +20,7 @@ export const GridLayout = styled.div`
 
 export const ResponsiveImage169 = styled.div`
     position: relative;
-    width: 346px;
+    width: 100%;
     aspect-ratio: 16 / 9;
 `;
 
