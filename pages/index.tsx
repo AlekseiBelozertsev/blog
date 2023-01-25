@@ -34,6 +34,7 @@ export default function Home() {
               border={`2px solid ${colors.paragraphColor}`}
               content='LinkedIn' />
           </FlexRow>
+          
         </HomeSection>
         <Projects />
       </HomeWrapper>

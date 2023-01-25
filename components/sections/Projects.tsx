@@ -16,6 +16,20 @@ const Projects = () => {
                     projectName: 'Test project',
                     description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa.'
                 }} ></Card>
+                 <Card props={{
+                    thumbnail: '/test.jpg',
+                    projectalt: '',
+                    icon: '/icons/skull.svg',
+                    projectName: 'Test project',
+                    description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa.'
+                }} ></Card>
+                 <Card props={{
+                    thumbnail: '/test.jpg',
+                    projectalt: '',
+                    icon: '/icons/skull.svg',
+                    projectName: 'Test project',
+                    description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa.'
+                }} ></Card>
             </GridLayout>
            
         </ProjectsSection>
@@ -27,7 +41,6 @@ export default Projects;
 const ProjectsSection = styled.section`
     display: flex;
     flex-direction: column;
-    padding: 200px 0;
-    height: 500px;
+    padding: 150px 0;
     gap: 48px;
 `;
