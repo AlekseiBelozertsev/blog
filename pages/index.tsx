@@ -2,6 +2,10 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import styled from 'styled-components';
 import LinkButton from '@/components/Button';
+import Projects from '@/components/sections/Projects';
+import { MainHeading, Paragraph } from '@/src/typography';
+import { FlexRow } from '@/src/layouts';
+import { colors } from '@/src/colors';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,22 +20,22 @@ export default function Home() {
       <HomeWrapper>
        <HomeSection>
           <span className='home-section_profession'>About me:</span>
-          <h1>Hi! My name is Alexei, let me introduce myself.</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus praesentium doloremque adipisci odit corporis ratione voluptatum cupiditate ducimus veniam maxime. Maiores unde impedit, dolorum praesentium laborum similique tempora quasi dolor.</p>
-          <Buttons>
-        <LinkButton
-          link='/'
-          bgColor='#E81224' 
-          border='2px solid #111827'
-          content='LinkedIn' />
-        <LinkButton
-          link='/'
-          bgColor='#E81224' 
-          border='2px solid #111827'
-          content='Projects' />
-       </Buttons>
-       </HomeSection>
-       
+          <MainHeading>Hi! My name is Alexei, let me introduce myself.</MainHeading>
+          <Paragraph>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus praesentium doloremque adipisci odit corporis ratione voluptatum cupiditate ducimus veniam maxime. Maiores unde impedit, dolorum praesentium laborum similique tempora quasi dolor.</Paragraph>
+          <FlexRow>
+            <LinkButton
+              link='#projects'
+              bgcolor={colors.additionalColor} 
+              border={`2px solid ${colors.paragraphColor}`}
+              content='Projects' />
+            <LinkButton
+              link='/'
+              bgcolor={colors.additionalColor} 
+              border={`2px solid ${colors.paragraphColor}`}
+              content='LinkedIn' />
+          </FlexRow>
+        </HomeSection>
+        <Projects />
       </HomeWrapper>
     </>
   )
@@ -40,7 +44,7 @@ export default function Home() {
 const HomeWrapper = styled.div`
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
   width: 100%;
   margin: 0 20px;
 `;
@@ -58,35 +62,9 @@ const HomeSection = styled.div`
     font-size: 16px;
     line-height: 27px;
     text-transform: uppercase;
-    color:  #E81224;
-  }
-
-  p {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 150%;
-    color: #111827;
-  }
-
-  h1 {
-    font-family: 'Righteous', cursive;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 1em;
-    color: #1B1B18;
-  }
-
-  h2 {
-
+    color: ${colors.additionalColor};
   }
 `;
 
-export const Buttons = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-`;
+
 

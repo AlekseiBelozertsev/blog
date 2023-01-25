@@ -45,13 +45,13 @@ const Navbar = () => {
                 <span className='logo'>🐱‍👤</span>
             </NavbarInner>
             <NavbarInner>
-                <LinkContainer bgColor='#ECECE9' href={'/'}>
+                <LinkContainer bgcolor='#ECECE9' href={'/'}>
                     <span>Projects</span>
                 </LinkContainer>
-                <LinkContainer bgColor='#ECECE9' href={'/'}>
+                <LinkContainer bgcolor='#ECECE9' href={'/'}>
                     <span>Contact</span>
                 </LinkContainer>
-                <LinkContainer bgColor='#ECECE9' href={'/blog'}>
+                <LinkContainer bgcolor='#ECECE9' href={'/blog'}>
                     <span>Blog</span>
                 </LinkContainer>
             </NavbarInner>

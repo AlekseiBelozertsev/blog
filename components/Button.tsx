@@ -3,17 +3,17 @@ import styled from "styled-components";
 import Link from "next/link";
 
 type LinkButtonProps = {
-    bgColor?: string,
+    bgcolor?: string,
     border?: string,
     content?: string,
     link: string,
 }
 
-const LinkButton = ({  bgColor, border, content, link }: LinkButtonProps ) => {
+const LinkButton = ({  bgcolor, border, content, link }: LinkButtonProps ) => {
     return (
         <LinkContainer 
         href={link}
-        bgColor={bgColor}
+        bgcolor={bgcolor}
         border={border}>
            <span>{content}</span> 
         </LinkContainer>
@@ -22,7 +22,7 @@ const LinkButton = ({  bgColor, border, content, link }: LinkButtonProps ) => {
 
 export default LinkButton;
 
-export const LinkContainer = styled(Link)<{ bgColor?: string, border?: string }>`
+export const LinkContainer = styled(Link)<{ bgcolor?: string, border?: string }>`
     background-color: transparent;
     padding: 16px;
     border-radius: 8px;
@@ -32,10 +32,10 @@ export const LinkContainer = styled(Link)<{ bgColor?: string, border?: string }>
     border: ${ props => props.border };
     box-sizing: border-box;
     :hover {
-        background-color: ${ props => props.bgColor }
+        background-color: ${ props => props.bgcolor }
     }
     :focus {
-        background-color: ${ props => props.bgColor }
+        background-color: ${ props => props.bgcolor }
     }
     @media(max-width: 768px) {
         padding: 8px;
