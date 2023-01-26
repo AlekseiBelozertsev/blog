@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { SmallHeading } from '@/src/typography';
 import { colors } from '@/src/colors';
 import Image from 'next/image';
-import { FlexColumn, ResponsiveImage169 } from '@/src/layouts';
+import { FlexColumn, FlexRow, ResponsiveImage169 } from '@/src/layouts';
+import Tag from './Tag';
 
 type Card = {
     thumbnail: string,
@@ -23,6 +24,9 @@ const Card = ({props}: {props: Card}) => {
                 <SmallHeading>{props.projectName}</SmallHeading>
                 <span>{props.description}</span>
             </FlexColumn>
+            <FlexRow>
+                <Tag content='Music'></Tag>
+            </FlexRow>
         </CardBody>
     );
 };
@@ -34,6 +38,16 @@ const CardBody = styled.div`
     position: relative;
     flex-direction: column;
     gap: 16px;
+
+    
+    ${FlexRow} {
+        position: absolute;
+        visibility: hidden;
+        top: 105%;
+        left: 0;
+        transition: visibility .0s;
+    }
+
     :before {
         content: '';
         position: absolute;
@@ -46,6 +60,7 @@ const CardBody = styled.div`
         z-index: -1;
         transition: all .2s;
     }
+    
     :hover:before {
         width: 110%;
         top: -15px;
@@ -53,10 +68,17 @@ const CardBody = styled.div`
         left: -15px;
     }
 
+    :hover ${FlexRow} {
+        display: flex;
+        visibility: visible;
+        transition-delay: .25s
+    }
+
     ${FlexColumn} {
         align-items: flex-start;
         gap: 8px;
     }
+
 
     span {
         font-family: 'Inter';

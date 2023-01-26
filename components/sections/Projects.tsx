@@ -16,20 +16,6 @@ const Projects = () => {
                     projectName: 'Test project',
                     description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa.'
                 }} />
-                 <Card props={{
-                    thumbnail: '/test.jpg',
-                    projectalt: '',
-                    icon: '/icons/skull.svg',
-                    projectName: 'Test project',
-                    description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa.'
-                }} />
-                 <Card props={{
-                    thumbnail: '/test.jpg',
-                    projectalt: '',
-                    icon: '/icons/skull.svg',
-                    projectName: 'Test project',
-                    description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa. '
-                }} />
             </GridLayout>
            
         </ProjectsSection>

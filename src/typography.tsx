@@ -49,3 +49,12 @@ export const Paragraph = styled.p`
     line-height: 150%;
     color: ${colors.paragraphColor};
 `;
+
+export const Tags = styled.span`
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: ${colors.paragraphColor};
+`;
