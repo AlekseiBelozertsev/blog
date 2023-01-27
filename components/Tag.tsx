@@ -1,5 +1,5 @@
-import { colors } from '@/src/colors';
-import { Tags } from '@/src/typography';
+import { colors } from '@/lib/colors';
+import { Tags } from '@/lib/typography';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -20,6 +20,7 @@ const TagBody = styled.div`
     display: flex;
     padding: 8px;
     border-radius: 4px;
+    width: fit-content;
     border: 1px solid ${colors.borderRed};
     background: ${colors.errorRed};
 `;

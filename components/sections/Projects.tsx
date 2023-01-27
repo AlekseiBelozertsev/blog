@@ -1,5 +1,5 @@
-import { GridLayout } from '@/src/layouts';
-import { Heading } from '@/src/typography';
+import { GridLayout } from '@/lib/layouts';
+import { Heading } from '@/lib/typography';
 import React from 'react';
 import styled from 'styled-components';
 import Card from '../Card';

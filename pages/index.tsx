@@ -3,9 +3,9 @@ import { Inter } from '@next/font/google';
 import styled from 'styled-components';
 import LinkButton from '@/components/Button';
 import Projects from '@/components/sections/Projects';
-import { MainHeading, Paragraph } from '@/src/typography';
-import { FlexRow } from '@/src/layouts';
-import { colors } from '@/src/colors';
+import { MainHeading, Paragraph } from '@/lib/typography';
+import { FlexRow } from '@/lib/layouts';
+import { colors } from '@/lib/colors';
 
 const inter = Inter({ subsets: ['latin'] })
 

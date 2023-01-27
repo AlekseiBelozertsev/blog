@@ -1,4 +1,4 @@
-import { MainHeading } from '@/src/typography';
+import { MainHeading } from '@/lib/typography';
 import React from 'react';
 import styled from 'styled-components';
 

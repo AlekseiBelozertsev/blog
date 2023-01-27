@@ -1,4 +1,4 @@
-import { FlexRow } from '@/src/layouts';
+import { FlexRow } from '@/lib/layouts';
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';

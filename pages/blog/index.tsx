@@ -1,13 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { getAllPublished } from '@/lib/notion';
+import { GridLayout } from '@/lib/layouts';
+import { MainHeading } from '@/lib/typography';
+import styled from 'styled-components';
+import Post from '@/components/Post';
 
 export const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID ?? ''
 
 type Posts = {
   id: any;
   title: any;
-  // tags: any;
+  tags: any;
   description: any;
   createdAt: string;
   slug: any;
@@ -15,37 +19,58 @@ type Posts = {
 
 type Post = {
   id: string;
-  title: any;
-  // tags: any;
-  description: any;
+  title: string;
+  tags: any;
+  description: string;
   createdAt: string;
-  slug: any;
+  slug: string;
 }
 
 
 const Blog = ({posts}: {posts: Posts}) => {
     return (
-        <div>
-            <ul>
+      <BlogBody>
+      <MainHeading>Blog</MainHeading>
+        <GridLayout>
                 {
-                    posts.map((post: Post) => {
-                        return (
-                        <li key={post.id}>
-                          <Link href={`blog/${post.slug}`} >
-                              {post.title}
-                              {`   ` + post.createdAt}
-                              {post.description}
-                          </Link>
-                        </li>
-                      )
-                    })
+                  posts.map((post: Post) => {
+                      return (
+                      <Link href={`blog/${post.slug}`}>
+                        <Post props={{
+                        thumbnail: '/test.jpg',
+                        title: `${post.title}`,
+                        publishedAt: `${post.createdAt}`,
+                        tag: `${post.tags}`
+                        }}/>
+                      </Link>
+                    )
+                  })
                 }
-            </ul>
-        </div>
+          </GridLayout>
+        </BlogBody>
     );
 };
 
 export default Blog;
+
+const BlogBody = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px 0;
+    gap: 48px;
+
+
+  
+    ${GridLayout} {
+        padding-right: 24px;
+        gap: 48px;
+        width: 100%;
+        @media(max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr)
+        }
+    }
+`;
 
 export const getStaticProps = async () => {
     const database = await getAllPublished();
@@ -59,3 +84,4 @@ export const getStaticProps = async () => {
       revalidate: 1, // In seconds
     };
   }
+

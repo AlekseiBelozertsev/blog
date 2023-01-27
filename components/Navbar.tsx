@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { LinkContainer } from './Button';
-import { colors } from '@/src/colors';
+import { colors } from '@/lib/colors';
 
 const NavbarBody = styled.header`
     position: fixed;

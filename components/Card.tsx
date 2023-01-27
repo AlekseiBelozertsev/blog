@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SmallHeading } from '@/src/typography';
-import { colors } from '@/src/colors';
+import { SmallHeading } from '@/lib/typography';
+import { colors } from '@/lib/colors';
 import Image from 'next/image';
-import { FlexColumn, FlexRow, ResponsiveImage169 } from '@/src/layouts';
+import { FlexColumn, FlexRow, ResponsiveImage169 } from '@/lib/layouts';
 import Tag from './Tag';
 
 type Card = {
