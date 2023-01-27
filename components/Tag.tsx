@@ -8,7 +8,7 @@ type TagProps = {
     bgcolor?: string,
 }
 
-const Tag = ({content}: TagProps) => {
+const Tag = ({content}: TagProps, {bgcolor}: TagProps) => {
     return (
         <TagBody><Tags>{content}</Tags></TagBody>
     );
@@ -21,6 +21,5 @@ const TagBody = styled.div`
     padding: 8px;
     border-radius: 4px;
     width: fit-content;
-    border: 1px solid ${colors.borderRed};
-    background: ${colors.errorRed};
+    background: ${colors.pendingBlue};
 `;

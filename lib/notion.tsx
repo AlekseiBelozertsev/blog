@@ -10,24 +10,24 @@ const n2m = new NotionToMarkdown({notionClient: notion});
 
 // Page metadata gets the data needed for the post to show
 export const getPageMetaData = (post: any) => {
-    const getTags = (tags: any) => {
-      const allTags = tags.map((tag: any) => {
-        return tag.name;
-      });
+    // const getTags = (tags: any) => {
+    //   const allTags = tags.map((tag: any) => {
+    //     return tag.name;
+    //   });
   
-      return allTags;
-    };
+    //   return allTags;
+    // };
     
     return {
       id: post.id,
       title: post.properties.Name.title[0].plain_text,
-      tags: getTags(post.properties.Tags.multi_select),
+      tags: post.properties.Tags.multi_select,
       description: post.properties.Description.rich_text[0].plain_text,
       createdAt: getToday(post.properties.Created.last_edited_time),
       slug: post.properties.Slug.rich_text[0].plain_text,
     };
+    
   };
-
 
 // Fetches all posts
 export const getAllPublished = async () => {
@@ -52,7 +52,11 @@ export const getAllPublished = async () => {
     return allPosts.map((post: any) => {
       return getPageMetaData(post);
     });
+    
   };
+
+  
+
   
 
 // Fetches single post

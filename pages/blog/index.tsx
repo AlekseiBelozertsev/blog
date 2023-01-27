@@ -40,7 +40,7 @@ const Blog = ({posts}: {posts: Posts}) => {
                         thumbnail: '/test.jpg',
                         title: `${post.title}`,
                         publishedAt: `${post.createdAt}`,
-                        tag: `${post.tags}`
+                        tags: post.tags
                         }}/>
                       </Link>
                     )
@@ -74,6 +74,7 @@ const BlogBody = styled.div`
 
 export const getStaticProps = async () => {
     const database = await getAllPublished();
+    // console.log(database[0].tags)
     return {
       props: {
         posts: database,
@@ -83,5 +84,8 @@ export const getStaticProps = async () => {
       // - At most once every second
       revalidate: 1, // In seconds
     };
+
+    
   }
+
 
