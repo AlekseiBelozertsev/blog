@@ -54,6 +54,6 @@ export const Tags = styled.span`
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 12px;
     color: ${colors.paragraphColor};
 `;

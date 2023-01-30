@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ResponsiveImage169, FlexColumn, FlexRow } from '@/lib/layouts';
+import { ResponsiveImage169, FlexColumn, FlexRow, DateWrapper } from '@/lib/layouts';
+import { Tags } from '@/lib/typography';
 import { SmallHeading } from '@/lib/typography';
 import Image from 'next/image';
 import Tag from './Tag';
@@ -23,11 +24,14 @@ const Post = ({props}: {props: PostProps}) => {
             <FlexColumn>
                 <SmallHeading>{props.title}</SmallHeading>
                 <FlexRow>
-                    {
-                        props.tags.map((tag: any) => {
-                            return <Tag key={tag.id} content={tag.name} bgcolor={colors.successGreen}/>
-                        })
-                    }
+                    <FlexRow>
+                        {
+                            props.tags.map((tag: any) => {
+                                return <Tag key={tag.id} content={tag.name} bgcolor={colors.successGreen}/>
+                            })
+                        }
+                    </FlexRow>
+                    <DateWrapper><Tags>{props.publishedAt}</Tags></DateWrapper>
                 </FlexRow>
             </FlexColumn>
         </PostBody>
@@ -45,5 +49,11 @@ const PostBody = styled.div`
     img {
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+    }
+
+    ${FlexRow} {
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
     }
 `;

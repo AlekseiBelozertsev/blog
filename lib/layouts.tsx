@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "./colors";
 
 export const FlexRow = styled.div`
   display: flex;
@@ -28,5 +29,13 @@ export const ResponsiveImage11 = styled.div`
     position: relative;
     width: 60px;
     aspect-ratio: 1 / 1;
+`;
+
+export const DateWrapper = styled.div`
+    display: flex;
+    padding: 8px;
+    border-radius: 4px;
+    width: fit-content;
+    background: ${colors.mainBackground};
 `;
 
