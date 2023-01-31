@@ -8,14 +8,14 @@ const Footer = () => {
     return (
         <FooterBody >
             <FlexRow>
-                <Link href={'https://www.linkedin.com/in/alexei-belozertsev-85b04b224/'}>
-                    <span  className='icon'>👨🏻‍💼</span>
+                <Link target='_blank' href={'https://www.linkedin.com/in/alexei-belozertsev-85b04b224/'}>
+                    <span className='icon'>👨🏻‍💼</span>
                 </Link>
-                <Link href={'https://www.instagram.com/'}>
-                    <span  className='icon'>📸</span>
+                <Link target='_blank' href={'https://www.instagram.com/'}>
+                    <span className='icon'>📸</span>
                 </Link>
-                <Link href={'https://github.com/AlekseiBelozertsev'}>
-                    <span  className='icon'>👨🏻‍💻</span>
+                <Link target='_blank' href={'https://github.com/AlekseiBelozertsev'}>
+                    <span className='icon'>👨🏻‍💻</span>
                 </Link>
             </FlexRow>
         </FooterBody>
@@ -43,7 +43,6 @@ const FooterBody = styled.div<{link?: string}>`
         cursor: pointer;
         :before {
             content: 'Content';
-            content: $;
             visibility: hidden;
             position: absolute;
             padding: 5px;
