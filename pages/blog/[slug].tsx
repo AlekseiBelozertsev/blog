@@ -1,52 +1,107 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getAllPublished, getSinglePost } from '@/lib/notion';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { colors } from '@/lib/colors';
+import Image from 'next/image';
+import remarkGfm from 'remark-gfm';
+import { ResponsiveImage169 } from '@/lib/layouts';
 
 const BlogPage = styled.section`
     display: flex;
     flex-direction: column;
     max-width: 800px;
     margin: 0 auto;
-    img {
-        max-width: 800px;
-        aspect-ratio: 16 / 9;
-    }
+
     img:first-child {
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
     }
-`;
 
-const CodeBlock = (language: any, codestring: any) => {
-    return (
-        <SyntaxHighlighter language={language} style={vscDarkPlus} PreTag={`div`}>
-            {codestring}
-        </SyntaxHighlighter>
-    )
-}
+    ${ResponsiveImage169} {
+        background: ${colors.mainBackground};
+        margin: 24px 0 48px 0;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    h1 {
+        position: relative;
+        font-family: 'Righteous', cursive;
+        font-style: normal;
+        width: fit-content;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 1em;
+        align-self: center;
+        color: ${colors.headlineColor};
+        margin-bottom: 48px;
+        z-index: 1;
+        :before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 15px;
+            top: 70%;
+            background: ${colors.additionalColor};
+            z-index: -1;
+        }
+    }
+
+    h3 {
+        font-family: 'Inter', sans-serif;
+        font-style: bold;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.5em;
+        margin-top: 24px;
+        color: ${colors.headlineColor};
+    }
+
+    p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 150%;
+        color: ${colors.paragraphColor};
+    }
+
+    li {
+        position: relative;
+        left: 30px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: ${colors.paragraphColor};
+    }
+    
+    blockquote {
+        padding: 32px;
+        margin: 32px 0;
+        background: #F1F1EF;
+        border-radius: 8px;
+    }
+
+    hr {
+        width: 100%;
+        margin: 16px 0;
+        border: 1.5px solid ${colors.mainBackground};
+        border-radius: 5px;
+
+    }
+`;
 
 const BlogPost = ({ post }: { post: any }) => {
     return (
         <BlogPage>
+            <ResponsiveImage169>
+                <Image src='/test.jpg' fill alt='' />
+            </ResponsiveImage169>
             <ReactMarkdown
-                components={{
-                code({node, inline, className, children, ...props}) {
-                    const match = /language-(\w+)/.exec(className || '')
-                    return !inline && match ? (
-                    <CodeBlock
-                        codestring={String(children).replace(/\n$/, '')}
-                        language={match[1]}
-                    />
-                    ) : (
-                    <code className={className} {...props}>
-                        {children}
-                    </code>
-                    )
-                }
-            }}>
+                remarkPlugins={[remarkGfm]}>
                 {post.markdown}
             </ReactMarkdown>
         </BlogPage>
