@@ -35,7 +35,7 @@ const Blog = ({posts}: {posts: Posts}) => {
                 {
                   posts.map((post: Post) => {
                       return (
-                      <Link href={`blog/${post.slug}`}>
+                      <Link key={post.id} href={`blog/${post.slug}`}>
                         <Post props={{
                         thumbnail: '/test.jpg',
                         title: `${post.title}`,
