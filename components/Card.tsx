@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { SmallHeading } from '@/lib/typography';
 import { colors } from '@/lib/colors';
 import Image from 'next/image';
@@ -16,18 +17,21 @@ type Card = {
 
 const Card = ({props}: {props: Card}) => {
     return (
-        <CardBody>
-            <ResponsiveImage169>
-                <Image src={props.thumbnail} alt={props.projectalt} fill />
-            </ResponsiveImage169>
-            <FlexColumn>
-                <SmallHeading>{props.projectName}</SmallHeading>
-                <span>{props.description}</span>
-            </FlexColumn>
-            <FlexRow>
-                <Tag content='Music'></Tag>
-            </FlexRow>
-        </CardBody>
+        <Link target='_blank' href='#'>
+            <CardBody>
+                <ResponsiveImage169>
+                    <Image src={props.thumbnail} alt={props.projectalt} fill />
+                </ResponsiveImage169>
+                <FlexColumn>
+                    <SmallHeading>{props.projectName}</SmallHeading>
+                    <span>{props.description}</span>
+                </FlexColumn>
+                <FlexRow>
+                    <Tag content='Music'></Tag>
+                </FlexRow>
+            </CardBody>
+        </Link>
+        
     );
 };
 
@@ -38,6 +42,7 @@ const CardBody = styled.div`
     position: relative;
     flex-direction: column;
     gap: 16px;
+    cursor: pointer;
 
     
     ${FlexRow} {
