@@ -6,16 +6,16 @@ import { FlexRow } from '@/lib/layouts';
 
 const Footer = () => {
     return (
-        <FooterBody >
+        <FooterBody>
             <FlexRow>
                 <Link target='_blank' href={'https://www.linkedin.com/in/alexei-belozertsev-85b04b224/'}>
-                    <span className='icon'>👨🏻‍💼</span>
+                    <Icon link='LinkedIn'>👨🏻‍💼</Icon>
                 </Link>
                 <Link target='_blank' href={'https://www.instagram.com/'}>
-                    <span className='icon'>📸</span>
+                    <Icon link='Instagram'>📸</Icon>
                 </Link>
                 <Link target='_blank' href={'https://github.com/AlekseiBelozertsev'}>
-                    <span className='icon'>👨🏻‍💻</span>
+                    <Icon link='Github'>👨🏻‍💻</Icon>
                 </Link>
             </FlexRow>
         </FooterBody>
@@ -24,15 +24,11 @@ const Footer = () => {
 
 export default Footer;
 
-const FooterBody = styled.div<{link?: string}>`
+const FooterBody = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    .icon {
-        font-size: 40px;
-    }
 
     a {
         position: relative;
@@ -41,25 +37,7 @@ const FooterBody = styled.div<{link?: string}>`
         padding: 10px;
         transition: background-color .4s;
         cursor: pointer;
-        :before {
-            content: 'Content';
-            visibility: hidden;
-            position: absolute;
-            padding: 5px;
-            background-color: ${colors.additionalBackground};
-            color: white;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            border-radius: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -30px;
-        }
-        :hover:before {
-            visibility: visible;
-        }
+        
         :hover {
             background-color: ${colors.mainBackground};
         }
@@ -69,4 +47,29 @@ const FooterBody = styled.div<{link?: string}>`
         gap: 24px;
         padding: 25px;
     }
+`;
+
+const Icon = styled.span<{link: string}>`
+    position: relative;
+    font-size: 40px;
+    :before {
+        content: '${props => props.link}';
+        visibility: hidden;
+        position: absolute;
+        padding: 5px;
+        background-color: ${colors.additionalBackground};
+        color: white;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        border-radius: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -45px;
+    }
+    :hover:before {
+        visibility: visible;
+    }
+   
 `;
