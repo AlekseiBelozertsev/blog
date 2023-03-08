@@ -6,16 +6,23 @@ import { colors } from '@/lib/colors';
 import Image from 'next/image';
 import remarkGfm from 'remark-gfm';
 import { ResponsiveImage169 } from '@/lib/layouts';
+import Head from 'next/head';
+import Tag from '@/components/Tag';
 
 const BlogPage = styled.section`
     display: flex;
     flex-direction: column;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 
     img:first-child {
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
+        @media(max-width: 375px) {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
     }
 
     ${ResponsiveImage169} {
@@ -23,6 +30,10 @@ const BlogPage = styled.section`
         margin: 24px 0 48px 0;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
+        @media(max-width: 375px) {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
     }
 
     h1 {
@@ -46,6 +57,9 @@ const BlogPage = styled.section`
             background: ${colors.additionalColor};
             z-index: -1;
         }
+        @media(max-width: 375px) {
+            font-size: 32px;
+        }
     }
 
     h3 {
@@ -56,6 +70,10 @@ const BlogPage = styled.section`
         line-height: 1.5em;
         margin-top: 24px;
         color: ${colors.headlineColor};
+        @media(max-width: 375px) {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
     }
 
     p {
@@ -65,6 +83,9 @@ const BlogPage = styled.section`
         font-size: 24px;
         line-height: 150%;
         color: ${colors.paragraphColor};
+        @media(max-width: 375px) {
+            font-size: 16px;
+        }
     }
 
     li {
@@ -76,6 +97,9 @@ const BlogPage = styled.section`
         font-size: 20px;
         line-height: 150%;
         color: ${colors.paragraphColor};
+        @media(max-width: 375px) {
+            font-size: 16px;
+        }
     }
     
     blockquote {
@@ -96,15 +120,18 @@ const BlogPage = styled.section`
 
 const BlogPost = ({ post }: { post: any }) => {
     return (
-        <BlogPage>
-            <ResponsiveImage169>
-                <Image src='/test.jpg' fill alt='' />
-            </ResponsiveImage169>
-            <ReactMarkdown
-                remarkPlugins={[remarkGfm]}>
-                {post.markdown}
-            </ReactMarkdown>
-        </BlogPage>
+        <>
+            <Head><title>Post</title></Head>
+            <BlogPage>
+                <ResponsiveImage169>
+                    <Image src='/test.jpg' fill alt={post.title} />
+                </ResponsiveImage169>
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}>
+                    {post.markdown}
+                </ReactMarkdown>
+            </BlogPage>
+        </>
     );
 };
 

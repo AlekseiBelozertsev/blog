@@ -51,6 +51,9 @@ const CardBody = styled.div`
         top: 105%;
         left: 0;
         transition: visibility .0s;
+        @media(max-width: 375px) {
+            visibility: visible;
+        }
     }
 
     :before {
@@ -95,5 +98,13 @@ const CardBody = styled.div`
 
     img {  
         border-radius: 8px;
+    }
+    @media(max-width: 375px) {
+        :hover:before {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            top: 24px;
+            left: 16px;
+        }
     }
 `;

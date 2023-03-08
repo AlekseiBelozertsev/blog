@@ -5,6 +5,7 @@ import { GridLayout } from '@/lib/layouts';
 import { MainHeading } from '@/lib/typography';
 import styled from 'styled-components';
 import Post from '@/components/Post';
+import Head from 'next/head';
 
 export const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID ?? ''
 
@@ -29,9 +30,13 @@ type Post = {
 
 const Blog = ({posts}: {posts: Posts}) => {
     return (
-      <BlogBody>
-      <MainHeading>Blog</MainHeading>
-        <GridLayout>
+      <>
+        <Head>
+          <title>Blog</title>
+        </Head>
+        <BlogBody>
+          <MainHeading>Blog</MainHeading>
+          <GridLayout>
                 {
                   posts.map((post: Post) => {
                       return (
@@ -48,6 +53,7 @@ const Blog = ({posts}: {posts: Posts}) => {
                 }
           </GridLayout>
         </BlogBody>
+      </>
     );
 };
 
@@ -57,17 +63,21 @@ const BlogBody = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 50px 0;
+    padding: 50px 20px;
+    /* padding: 0 20px; */
     gap: 48px;
 
 
   
     ${GridLayout} {
-        padding-right: 24px;
         gap: 48px;
         width: 100%;
+        
         @media(max-width: 768px) {
             grid-template-columns: repeat(2, 1fr)
+        }
+        @media(max-width: 376px) {
+            grid-template-columns: 1fr;
         }
     }
 `;

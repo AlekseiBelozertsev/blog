@@ -17,6 +17,7 @@ type PostProps = {
 
 const Post = ({props}: {props: PostProps}) => {
     return (
+        
         <PostBody>
             <ResponsiveImage169>
                 <Image src={props.thumbnail} alt={props.title} fill />
@@ -35,6 +36,7 @@ const Post = ({props}: {props: PostProps}) => {
                 </FlexRow>
             </FlexColumn>
         </PostBody>
+
     );
 };
 

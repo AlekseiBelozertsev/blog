@@ -8,6 +8,9 @@ export const MainHeading = styled.h1`
     font-size: 64px;
     line-height: 1em;
     color: ${colors.headlineColor};
+    @media(max-width: 375px) {
+        font-size: 32px;
+    }
 `;
 
 export const Heading = styled.h2`
@@ -48,6 +51,9 @@ export const Paragraph = styled.p`
     font-size: 24px;
     line-height: 150%;
     color: ${colors.paragraphColor};
+    @media(max-width: 375px) {
+        font-size: 16px;
+    }
 `;
 
 export const Tags = styled.span`
