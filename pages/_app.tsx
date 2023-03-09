@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --max-width: 1100px;
     --border-radius: 12px;
-    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    --font-mono: ui-monospace, 'Tilt Warp', Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
       'Roboto Mono', 'Oxygen Mono', 'Righteous', 'Ubuntu Monospace', 'Source Code Pro',
       'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   
