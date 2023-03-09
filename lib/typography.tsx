@@ -5,7 +5,7 @@ import { Righteous } from '@next/font/google';
 export const mainFont = Righteous({weight: '400', subsets: ['latin'] });
 
 export const MainHeading = styled.h1`
-    font-family: 'Inter', sans-serif;
+    font-family: 'Righteous';
     font-size: 64px;
     line-height: 1em;
     color: ${colors.headlineColor};
@@ -16,7 +16,7 @@ export const MainHeading = styled.h1`
 
 export const Heading = styled.h2`
     position: relative;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Tilt';
     font-style: normal;
     width: fit-content;
     font-weight: 700;
@@ -37,9 +37,9 @@ export const Heading = styled.h2`
 `;
 
 export const SmallHeading = styled.h3`
-    font-family: 'Inter', sans-serif;
-    font-style: bold;
-    font-weight: 700;
+    font-family: 'Tilt';
+    font-style: normal;
+    font-weight: 400;
     font-size: 32px;
     line-height: 1em;
     color: ${colors.headlineColor};

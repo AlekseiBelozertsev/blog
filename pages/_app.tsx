@@ -11,19 +11,19 @@ export const interFont = Inter({
 })
 
 const GlobalStyles = createGlobalStyle`
+
   @font-face {
-    font-family: 'Tilt Warp', cursive;
-    src: url('/fonts/TiltWarp-Regular.ttf') format('ttf');
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
+    font-family: 'Tilt';
+    src: url('/fonts/TiltWarp-Regular.ttf');
   }
   @font-face {
-    font-family: 'Righteous', cursive;
-    src: url('/fonts/Righteous-Regular.woff') format('woff');
-    font-style: bold;
-    font-weight: 400;
-    font-display: swap;
+    font-family: 'Righteous';
+    src: url('/fonts/Righteous-Regular.woff');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.ttf');
   }
 
   :root {
