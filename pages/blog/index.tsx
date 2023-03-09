@@ -76,7 +76,7 @@ const BlogBody = styled.div`
         @media(max-width: 768px) {
             grid-template-columns: repeat(2, 1fr)
         }
-        @media(max-width: 376px) {
+        @media(max-width: 425px) {
             grid-template-columns: 1fr;
         }
     }

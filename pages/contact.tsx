@@ -5,9 +5,7 @@ import Head from 'next/head'
 const Contact = () => {
     return (
         <>
-            <Head>
-                <title>Contacts</title>
-            </Head>
+            <Head><title>Contacts</title></Head>
             <ContactPageBody>
                 <MainHeading>
                     This is contact page.

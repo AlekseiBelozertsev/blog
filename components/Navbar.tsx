@@ -17,8 +17,11 @@ const NavbarBody = styled.header`
     background: transparent;
     z-index: 2;
 
-    .logo {
-        font-size: 40px;
+    @media(max-width:345px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
     }
 `;
 

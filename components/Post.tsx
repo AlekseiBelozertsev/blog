@@ -20,7 +20,9 @@ const Post = ({props}: {props: PostProps}) => {
         
         <PostBody>
             <ResponsiveImage169>
-                <Image src={props.thumbnail} alt={props.title} fill />
+                <Image src={props.thumbnail} alt={props.title} fill sizes="(max-width: 768px) 100vw,
+                    (max-width: 1200px) 50vw,
+                    33vw" />
             </ResponsiveImage169>
             <FlexColumn>
                 <SmallHeading>{props.title}</SmallHeading>

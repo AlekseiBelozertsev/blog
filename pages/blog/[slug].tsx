@@ -131,8 +131,7 @@ const BlogPost = ({ post }: { post: any }) => {
                     src={post.metadata.thumbnail}
                     fill
                     sizes="(max-width: 768px) 100vw,
-                    (max-width: 1200px) 50vw,
-                    33vw"
+                    (max-width: 1200px) 100vw"
                     priority
                     alt={post.metadata.title} />
                 </ResponsiveImage169>

@@ -36,7 +36,7 @@ const ProjectsSection = styled.section`
         padding-right: 24px;
         gap: 48px;
         width: 100%;
-        @media(max-width: 375px) {
+        @media(max-width: 425px) {
             grid-template-columns: 1fr;
         }
     }

@@ -20,7 +20,9 @@ const Card = ({props}: {props: Card}) => {
         <Link target='_blank' href='#'>
             <CardBody>
                 <ResponsiveImage169>
-                    <Image src={props.thumbnail} alt={props.projectalt} fill />
+                    <Image src={props.thumbnail} alt={props.projectalt} fill sizes="(max-width: 768px) 100vw,
+                    (max-width: 1200px) 50vw,
+                    33vw" />
                 </ResponsiveImage169>
                 <FlexColumn>
                     <SmallHeading>{props.projectName}</SmallHeading>
