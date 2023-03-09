@@ -107,6 +107,9 @@ const BlogPage = styled.section`
         margin: 32px 0;
         background: #F1F1EF;
         border-radius: 8px;
+        @media(max-width: 375px) {
+            padding: 24px;
+        }
     }
 
     hr {
@@ -121,10 +124,17 @@ const BlogPage = styled.section`
 const BlogPost = ({ post }: { post: any }) => {
     return (
         <>
-            <Head><title>Post</title></Head>
+            <Head><title>{post.metadata.title}</title></Head>
             <BlogPage>
                 <ResponsiveImage169>
-                    <Image src='/test.jpg' fill alt={post.title} />
+                    <Image 
+                    src={post.metadata.thumbnail}
+                    fill
+                    sizes="(max-width: 768px) 100vw,
+                    (max-width: 1200px) 50vw,
+                    33vw"
+                    priority
+                    alt={post.metadata.title} />
                 </ResponsiveImage169>
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}>
@@ -138,15 +148,15 @@ const BlogPost = ({ post }: { post: any }) => {
 export default BlogPost;
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-    const post = await getSinglePost(params.slug)
-   
+    const post = await getSinglePost(params.slug);
+    
     return {
         props: {
             post,
         },
         revalidate: 60
         };
-  };
+};
 
 export const getStaticPaths = async () => {
     const posts = await getAllPublished();

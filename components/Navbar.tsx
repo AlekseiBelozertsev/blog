@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 import { LinkContainer } from './Button';
 import { colors } from '@/lib/colors';
 
@@ -43,7 +44,7 @@ const Navbar = () => {
     return (
         <NavbarBody>
             <NavbarInner>  
-                <span className='logo'>🐱‍👤</span>
+                <Image alt='Logo' src={'/cat_ninja.png'} width='50' height='50'/>
             </NavbarInner>
             <NavbarInner>
                 <LinkContainer bgcolor={colors.mainBackground} href={'/'}>

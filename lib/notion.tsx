@@ -10,21 +10,15 @@ const n2m = new NotionToMarkdown({notionClient: notion});
 
 // Page metadata gets the data needed for the post to show
 export const getPageMetaData = (post: any) => {
-    // const getTags = (tags: any) => {
-    //   const allTags = tags.map((tag: any) => {
-    //     return tag.name;
-    //   });
-  
-    //   return allTags;
-    // };
-    
+
     return {
       id: post.id,
       title: post.properties.Name.title[0].plain_text,
       tags: post.properties.Tags.multi_select,
       description: post.properties.Description.rich_text[0].plain_text,
-      createdAt: getToday(post.properties.Created.last_edited_time),
+      createdAt: post.properties.Created.rich_text[0].plain_text,
       slug: post.properties.Slug.rich_text[0].plain_text,
+      thumbnail: post.properties.Thumbnail.rich_text[0].plain_text
     };
     
   };
@@ -84,20 +78,3 @@ export const getSinglePost = async (Slug: string) => {
     }
 };
 
-//Makes date easier to read
-const getToday = (datestring: string) => {
-    const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  
-    let date = new Date();
-  
-    if (datestring) {
-      date = new Date(datestring);
-    }
-  
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-    let today = `${month} ${day}, ${year}`;
-  
-    return today;
-  };
