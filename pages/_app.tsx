@@ -3,12 +3,6 @@ import Layout from '@/components/Layout'
 import Navbar from '@/components/Navbar'
 import type { AppProps } from 'next/app'
 import { createGlobalStyle } from 'styled-components'
-import { Inter } from '@next/font/google'
-
-export const interFont = Inter({
-  subsets: ['latin'],
-  weight: '400',
-})
 
 const GlobalStyles = createGlobalStyle`
 
@@ -115,6 +109,7 @@ const GlobalStyles = createGlobalStyle`
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;
+      
     }
   }
   

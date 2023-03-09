@@ -25,14 +25,8 @@ export const Heading = styled.h2`
     align-self: center;
     color: ${colors.headlineColor};
     z-index: 1;
-    :before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 15px;
-        top: 70%;
-        background: ${colors.additionalColor};
-        z-index: -1;
+    @media(max-width: 550px) {
+        font-size: 24px;
     }
 `;
 

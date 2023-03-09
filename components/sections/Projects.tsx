@@ -41,6 +41,7 @@ const ProjectsSection = styled.section`
         width: 100%;
         @media(max-width: 550px) {
             grid-template-columns: 1fr;
+            padding-right: 0;
         }
     }
 `;
