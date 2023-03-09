@@ -30,13 +30,16 @@ const ProjectsSection = styled.section`
     width: 100%;
     padding: 150px 0;
     gap: 48px;
+    @media(max-width: 550px) {
+        padding: 70px 0;
+    }
 
     ${GridLayout} {
         box-sizing: border-box;
         padding-right: 24px;
         gap: 48px;
         width: 100%;
-        @media(max-width: 425px) {
+        @media(max-width: 550px) {
             grid-template-columns: 1fr;
         }
     }

@@ -37,6 +37,7 @@ const Post = ({props}: {props: PostProps}) => {
                     <DateWrapper><Tags>{props.publishedAt}</Tags></DateWrapper>
                 </FlexRow>
             </FlexColumn>
+            <hr />
         </PostBody>
 
     );
@@ -53,11 +54,26 @@ const PostBody = styled.div`
     img {
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+        @media(max-width: 550px) {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
     }
 
     ${FlexRow} {
         align-items: flex-start;
         justify-content: space-between;
         gap: 8px;
+    }
+
+    hr {
+        width: 100%;
+        margin-top: 16px;
+        display: none;
+        border: 1.5px solid ${colors.mainBackground};
+        border-radius: 5px;
+        @media(max-width: 550px) {
+            display: block;
+        }
     }
 `;

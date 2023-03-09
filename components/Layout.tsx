@@ -5,7 +5,8 @@ export const PageLayout = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 1125px;
-    margin: 120px auto;
+    min-height: calc(100vh - 120px);
+    margin: 120px auto 0 auto;
 
 `
 
