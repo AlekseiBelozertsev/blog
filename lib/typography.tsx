@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { colors } from "./colors";
+import { Righteous } from '@next/font/google';
+
+export const mainFont = Righteous({weight: '400', subsets: ['latin'] });
 
 export const MainHeading = styled.h1`
-    font-family: 'Righteous', cursive;
-    font-style: normal;
-    font-weight: 700;
+    font-family: 'Roboto Mono';
     font-size: 64px;
     line-height: 1em;
     color: ${colors.headlineColor};
@@ -15,7 +16,7 @@ export const MainHeading = styled.h1`
 
 export const Heading = styled.h2`
     position: relative;
-    font-family: 'Righteous', cursive;
+    font-family: 'Roboto Mono', cursive;
     font-style: normal;
     width: fit-content;
     font-weight: 700;

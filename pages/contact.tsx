@@ -1,13 +1,15 @@
 import { MainHeading } from '@/lib/typography';
 import React from 'react';
 import styled from 'styled-components';
-import Head from 'next/head'
+import Head from 'next/head';
+
+
 const Contact = () => {
     return (
         <>
             <Head><title>Contacts</title></Head>
             <ContactPageBody>
-                <MainHeading>
+                <MainHeading >
                     This is contact page.
                 </MainHeading>
             </ContactPageBody>

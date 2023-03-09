@@ -35,6 +35,7 @@ const Blog = ({posts}: {posts: Posts}) => {
           <title>Blog</title>
         </Head>
         <BlogBody>
+          {/* WHY THE FUCKING FONTS NOT LOADING??? */}
           <MainHeading>Blog</MainHeading>
           <GridLayout>
                 {
