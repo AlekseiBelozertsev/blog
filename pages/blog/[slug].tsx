@@ -5,7 +5,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { colors } from '@/lib/colors';
 import Image from 'next/image';
 import remarkGfm from 'remark-gfm';
-import { ResponsiveImage169 } from '@/lib/layouts';
+import { FlexRow, ResponsiveImage169 } from '@/lib/layouts';
 import Head from 'next/head';
 import Tag from '@/components/Tag';
 
@@ -19,20 +19,21 @@ const BlogPage = styled.section`
     img:first-child {
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
-        @media(max-width: 375px) {
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
+        @media(max-width: 550px) {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
         }
     }
 
     ${ResponsiveImage169} {
         background: ${colors.mainBackground};
-        margin: 24px 0 48px 0;
+        margin: 24px 0;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
-        @media(max-width: 375px) {
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
+        @media(max-width: 550px) {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin: 24px 0;
         }
     }
 
@@ -46,7 +47,7 @@ const BlogPage = styled.section`
         line-height: 1em;
         align-self: center;
         color: ${colors.headlineColor};
-        margin-bottom: 48px;
+        margin: 48px 0;
         z-index: 1;
         :before {
             content: '';
@@ -57,7 +58,7 @@ const BlogPage = styled.section`
             background: ${colors.additionalColor};
             z-index: -1;
         }
-        @media(max-width: 375px) {
+        @media(max-width: 550px) {
             font-size: 32px;
         }
     }
@@ -70,7 +71,7 @@ const BlogPage = styled.section`
         line-height: 1.5em;
         margin-top: 24px;
         color: ${colors.headlineColor};
-        @media(max-width: 375px) {
+        @media(max-width: 550px) {
             font-size: 24px;
             margin-bottom: 8px;
         }
@@ -83,7 +84,7 @@ const BlogPage = styled.section`
         font-size: 24px;
         line-height: 150%;
         color: ${colors.paragraphColor};
-        @media(max-width: 375px) {
+        @media(max-width: 550px) {
             font-size: 16px;
         }
     }
@@ -135,6 +136,9 @@ const BlogPost = ({ post }: { post: any }) => {
                     priority
                     alt={post.metadata.title} />
                 </ResponsiveImage169>
+                <FlexRow>
+                    <Tag content={post.metadata.createdAt} bgcolor={colors.errorRed}></Tag>
+                </FlexRow>
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}>
                     {post.markdown}
@@ -148,7 +152,6 @@ export default BlogPost;
 
 export const getStaticProps = async ({ params }: { params: any }) => {
     const post = await getSinglePost(params.slug);
-    
     return {
         props: {
             post,

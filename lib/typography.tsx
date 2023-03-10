@@ -10,7 +10,7 @@ export const MainHeading = styled.h1`
     line-height: 1em;
     color: ${colors.headlineColor};
     @media(max-width: 550px) {
-        font-size: 32px;
+        font-size: 38px;
     }
 `;
 
@@ -19,14 +19,14 @@ export const Heading = styled.h2`
     font-family: 'Tilt';
     font-style: normal;
     width: fit-content;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 48px;
     line-height: 1em;
     align-self: center;
     color: ${colors.headlineColor};
     z-index: 1;
     @media(max-width: 550px) {
-        font-size: 24px;
+        font-size: 32px;
     }
 `;
 
@@ -37,6 +37,9 @@ export const SmallHeading = styled.h3`
     font-size: 32px;
     line-height: 1em;
     color: ${colors.headlineColor};
+    @media(max-width: 550px) {
+        font-size: 27px;
+    }
 `;
 
 export const Paragraph = styled.p`

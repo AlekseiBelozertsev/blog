@@ -16,6 +16,7 @@ type Posts = {
   description: any;
   createdAt: string;
   slug: any;
+  thumbnail: string;
 }[]
 
 type Post = {
@@ -25,6 +26,7 @@ type Post = {
   description: string;
   createdAt: string;
   slug: string;
+  thumbnail: string;
 }
 
 
@@ -35,7 +37,6 @@ const Blog = ({posts}: {posts: Posts}) => {
           <title>Blog</title>
         </Head>
         <BlogBody>
-          {/* WHY THE FUCKING FONTS NOT LOADING??? */}
           <MainHeading>Blog</MainHeading>
           <GridLayout>
                 {
@@ -43,7 +44,7 @@ const Blog = ({posts}: {posts: Posts}) => {
                       return (
                       <Link key={post.id} href={`blog/${post.slug}`}>
                         <Post props={{
-                        thumbnail: '/test.jpg',
+                        thumbnail: `${post.thumbnail}`,
                         title: `${post.title}`,
                         publishedAt: `${post.createdAt}`,
                         tags: post.tags

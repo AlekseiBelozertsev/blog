@@ -8,18 +8,18 @@ type TagProps = {
     bgcolor?: string,
 }
 
-const Tag = ({content}: TagProps, {bgcolor}: TagProps) => {
+const Tag = ({content, bgcolor}: TagProps) => {
     return (
-        <TagBody><Tags>{content}</Tags></TagBody>
+        <TagBody bgcolor={bgcolor}><Tags>{content}</Tags></TagBody>
     );
 };
 
 export default Tag;
 
-const TagBody = styled.div`
+const TagBody = styled.div<{bgcolor?: string}>`
     display: flex;
     padding: 8px;
     border-radius: 4px;
     width: fit-content;
-    background: ${colors.pendingBlue};
+    background: ${ props => props.bgcolor ? props.bgcolor : colors.pendingBlue };
 `;

@@ -30,7 +30,7 @@ const Post = ({props}: {props: PostProps}) => {
                     <FlexRow>
                         {
                             props.tags.map((tag: any) => {
-                                return <Tag key={tag.id} content={tag.name} bgcolor={colors.successGreen}/>
+                                return <Tag key={tag.id} content={tag.name} bgcolor={colors.pendingBlue}/>
                             })
                         }
                     </FlexRow>
