@@ -49,17 +49,9 @@ const BlogPage = styled.section`
         color: ${colors.headlineColor};
         margin: 48px 0;
         z-index: 1;
-        :before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 15px;
-            top: 70%;
-            background: ${colors.additionalColor};
-            z-index: -1;
-        }
         @media(max-width: 550px) {
             font-size: 32px;
+            margin: 32px 0;
         }
     }
 

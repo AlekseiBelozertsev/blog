@@ -53,8 +53,15 @@ const CardBody = styled.div`
         top: 105%;
         left: 0;
         transition: visibility .0s;
+        @media(max-width: 1200px) {
+            visibility: visible;
+            top: 85%;
+            left: 3%;
+        }
         @media(max-width: 550px) {
             visibility: visible;
+            top: 88%;
+            left: 2%;
         }
     }
 
@@ -101,12 +108,13 @@ const CardBody = styled.div`
     img {  
         border-radius: 8px;
     }
-    @media(max-width: 550px) {
+    @media(max-width: 1200px) {
         :before {
-            width: 105%;
-            top: -15px;
-            aspect-ratio: 1 / 1;
-            left: -9px;
+            display: none;
         }
+
+        background: ${colors.mainBackground};
+        padding: 8px 8px 54px 8px;
+        border-radius: 8px;
     }
 `;

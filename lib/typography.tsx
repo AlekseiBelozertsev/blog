@@ -7,7 +7,8 @@ export const mainFont = Righteous({weight: '400', subsets: ['latin'] });
 export const MainHeading = styled.h1`
     font-family: 'Righteous';
     font-size: 64px;
-    line-height: 1em;
+    line-height: 1.15em;
+    letter-spacing: 1px;
     color: ${colors.headlineColor};
     @media(max-width: 550px) {
         font-size: 38px;
@@ -19,6 +20,7 @@ export const Heading = styled.h2`
     font-family: 'Tilt';
     font-style: normal;
     width: fit-content;
+    letter-spacing: 1px;
     font-weight: 400;
     font-size: 48px;
     line-height: 1em;

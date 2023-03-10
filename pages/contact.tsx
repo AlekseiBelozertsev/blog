@@ -9,9 +9,8 @@ const Contact = () => {
         <>
             <Head><title>Contacts</title></Head>
             <ContactPageBody>
-                <MainHeading >
-                    This is contact page.
-                </MainHeading>
+                <MainHeading >Contact me!</MainHeading>
+                
             </ContactPageBody>
         </>
         

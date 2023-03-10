@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { colors } from '@/lib/colors';
 import { FlexRow } from '@/lib/layouts';
+import { Tags } from '@/lib/typography';
 
 const Footer = () => {
     return (
@@ -18,6 +19,7 @@ const Footer = () => {
                     <Icon link='Github'>👨🏻‍💻</Icon>
                 </Link>
             </FlexRow>
+            <Tags>Copyright © 2023 Aleksei Belozertsev</Tags>
         </FooterBody>
     );
 };
@@ -31,6 +33,7 @@ const FooterBody = styled.div`
     align-items: center;
     margin-top: auto;
 
+
     a {
         position: relative;
         background-color: none;
@@ -42,6 +45,11 @@ const FooterBody = styled.div`
         :hover {
             background-color: ${colors.mainBackground};
         }
+    }
+
+    ${Tags} {
+       font-size: 16px;
+       padding-bottom: 16px;
     }
 
     ${FlexRow} {
