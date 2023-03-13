@@ -47,7 +47,7 @@ const Navbar = () => {
     return (
         <NavbarBody>
             <NavbarInner>  
-                <Image alt='Logo' src={'/cat_ninja.png'} width='50' height='50'/>
+                <Image alt='Logo' src={'img/cat_ninja.png'} width='50' height='50'/>
             </NavbarInner>
             <NavbarInner>
                 <LinkContainer bgcolor={colors.mainBackground} href={'/'}>
