@@ -20,7 +20,7 @@ const Footer = () => {
                 </Link>
             </FlexRow>
             <FlexRow>
-                <Link href={'/projects'}>
+                <Link href={'/'}>
                     <Tags>Projects</Tags>
                 </Link>
                 <Link href={'/contact'}>
@@ -75,6 +75,10 @@ const FooterBody = styled.div`
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        @media(max-width: 768px) {
+            padding: 8px;
+            gap: 0;
+        }
     }
 `;
 

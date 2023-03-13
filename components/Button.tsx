@@ -7,13 +7,15 @@ type LinkButtonProps = {
     border?: string,
     content?: string,
     link: string,
+    target?: string,
 }
 
-const LinkButton = ({  bgcolor, border, content, link }: LinkButtonProps ) => {
+const LinkButton = ({  bgcolor, border, content, link, target }: LinkButtonProps ) => {
     return (
         <LinkContainer 
         href={link}
         bgcolor={bgcolor}
+        target={target}
         border={border}>
            <span>{content}</span> 
         </LinkContainer>

@@ -19,7 +19,6 @@ export default function Home() {
       </Head>
       <HomeWrapper>
        <HomeSection>
-          {/* <span className='home-section_profession'>About me:</span> */}
           <MainHeading>Hi! My name is Alexei, let me introduce myself.</MainHeading>
           <Paragraph>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus praesentium doloremque adipisci odit corporis ratione voluptatum cupiditate ducimus veniam maxime. Maiores unde impedit, dolorum praesentium laborum similique tempora quasi dolor.</Paragraph>
           <FlexRow>
@@ -29,7 +28,8 @@ export default function Home() {
               border={`2px solid ${colors.paragraphColor}`}
               content='Projects' />
             <LinkButton
-              link='/'
+              link='https://www.linkedin.com/in/alexei-belozertsev-85b04b224/'
+              target="_blank"
               bgcolor={colors.additionalColor} 
               border={`2px solid ${colors.paragraphColor}`}
               content='LinkedIn' />
