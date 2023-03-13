@@ -67,6 +67,10 @@ const FooterBody = styled.div`
     ${Tags} {
        font-size: 16px;
        padding-bottom: 16px;
+       @media(max-width: 400px) {
+            padding-bottom: 8px;
+            
+        }
     }
 
     ${FlexRow} {

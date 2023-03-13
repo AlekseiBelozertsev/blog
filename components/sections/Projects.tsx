@@ -3,19 +3,27 @@ import { Heading } from '@/lib/typography';
 import React from 'react';
 import styled from 'styled-components';
 import Card from '../Card';
+import { projects } from '@/pages/api/projects';
 
 const Projects = () => {
     return (
         <ProjectsSection id='projects'>
             <Heading>Projects</Heading>
             <GridLayout>
-                <Card props={{
-                    thumbnail: '/test.jpg',
-                    projectalt: '',
-                    icon: '/icons/skull.svg',
-                    projectName: 'Test project',
-                    description: 'Reprehenderit obcaecati ullam nihil, ab praesentium commodi animi facere ipsa.'
-                }} />
+                {
+                    projects.map((project) => {
+                        return (
+                            <Card key={project.projectName} props={{
+                                thumbnail: project.thumbnail,
+                                tags: project.tags,
+                                projectalt: project.alt,
+                                projectName: project.projectName,
+                                description: project.description,
+                                to: project.to,
+                            }} />
+                        )
+                    })
+                };
             </GridLayout>
            
         </ProjectsSection>

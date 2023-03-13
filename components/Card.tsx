@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { SmallHeading } from '@/lib/typography';
+import { Paragraph, SmallHeading } from '@/lib/typography';
 import { colors } from '@/lib/colors';
 import Image from 'next/image';
 import { FlexColumn, FlexRow, ResponsiveImage169 } from '@/lib/layouts';
 import Tag from './Tag';
+
+type TagObject = {
+    content: string,
+    color: string,
+}
 
 type Card = {
     thumbnail: string,
@@ -13,11 +18,13 @@ type Card = {
     icon?: string,
     projectName: string,
     description: string,
+    tags: TagObject[],
+    to: string,
 }
 
 const Card = ({props}: {props: Card}) => {
     return (
-        <Link target='_blank' href='#'>
+        <Link target='_blank' href={props.to}>
             <CardBody>
                 <ResponsiveImage169>
                     <Image src={props.thumbnail} alt={props.projectalt} fill sizes="(max-width: 768px) 100vw,
@@ -25,11 +32,11 @@ const Card = ({props}: {props: Card}) => {
                     33vw" />
                 </ResponsiveImage169>
                 <FlexColumn>
-                    <SmallHeading>{props.projectName}</SmallHeading>
+                    <Paragraph>{props.projectName}</Paragraph>
                     <span>{props.description}</span>
                 </FlexColumn>
                 <FlexRow>
-                    <Tag content='Music'></Tag>
+                    {props.tags.map((tag) => {return <Tag key={tag.content} bgcolor={tag.color} content={tag.content}></Tag>})}
                 </FlexRow>
             </CardBody>
         </Link>
@@ -46,6 +53,13 @@ const CardBody = styled.div`
     gap: 16px;
     cursor: pointer;
 
+    ${Paragraph} {
+        font-weight: 700;
+        @media(max-width: 768px) {
+            font-size: 24px;
+        }
+    }
+
     
     ${FlexRow} {
         position: absolute;
@@ -53,6 +67,7 @@ const CardBody = styled.div`
         top: 105%;
         left: 0;
         transition: visibility .0s;
+        gap: 16px;
         @media(max-width: 1200px) {
             visibility: visible;
             top: 85%;
@@ -106,7 +121,8 @@ const CardBody = styled.div`
     }
 
     img {  
-        border-radius: 8px;
+        border-radius: 4px;
+        border: 2px solid ${colors.mainBackground};
     }
     @media(max-width: 1200px) {
         :before {
@@ -115,6 +131,6 @@ const CardBody = styled.div`
 
         background: ${colors.mainBackground};
         padding: 8px 8px 54px 8px;
-        border-radius: 8px;
+        border-radius: 4px;
     }
 `;
