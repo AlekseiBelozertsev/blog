@@ -9,16 +9,31 @@ const Footer = () => {
     return (
         <FooterBody>
             <FlexRow>
-                <Link target='_blank' href={'https://www.linkedin.com/in/alexei-belozertsev-85b04b224/'}>
+                <Link target='_blank' className='hover-link' href={'https://www.linkedin.com/in/alexei-belozertsev-85b04b224/'}>
                     <Icon link='LinkedIn'>👨🏻‍💼</Icon>
                 </Link>
-                <Link target='_blank' href={'https://www.instagram.com/'}>
+                <Link target='_blank' className='hover-link' href={'https://www.instagram.com/'}>
                     <Icon link='Instagram'>📸</Icon>
                 </Link>
-                <Link target='_blank' href={'https://github.com/AlekseiBelozertsev'}>
+                <Link target='_blank' className='hover-link' href={'https://github.com/AlekseiBelozertsev'}>
                     <Icon link='Github'>👨🏻‍💻</Icon>
                 </Link>
             </FlexRow>
+            <FlexRow>
+                <Link href={'/projects'}>
+                    <Tags>Projects</Tags>
+                </Link>
+                <Link href={'/contact'}>
+                    <Tags>Contact</Tags>
+                </Link>
+                <Link href={'/blog'}>
+                    <Tags>Blog</Tags>
+                </Link>
+                <Link href={'/terms-and-conditions'}>
+                    <Tags>Terms and conditions</Tags>
+                </Link>
+            </FlexRow>
+            
             <Tags>Copyright © 2023 Aleksei Belozertsev</Tags>
         </FooterBody>
     );
@@ -42,10 +57,12 @@ const FooterBody = styled.div`
         transition: background-color .4s;
         cursor: pointer;
         
-        :hover {
+        
+    }
+
+    .hover-link:hover {
             background-color: ${colors.mainBackground};
         }
-    }
 
     ${Tags} {
        font-size: 16px;
@@ -55,6 +72,9 @@ const FooterBody = styled.div`
     ${FlexRow} {
         gap: 24px;
         padding: 25px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
